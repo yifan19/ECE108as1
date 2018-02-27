@@ -1,0 +1,66 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\title{ECE108 Assignment 1}
+\author{Yi Fan Yu (yf3yu@edu.uwaterloo.ca ) }
+\date{Feb 22, 2017}
+\maketitle
+
+
+\section{Set Operation}
+
+
+a)
+\begin{flushleft}
+
+$R \subseteq  S \iff R \subseteq  ((S - T) \cup (R \cap T))$ 
+
+
+This statement is false because the implication is only unidirectional. 
+\bigskip
+
+
+
+Proving $R \subseteq  S \rightarrow R \subseteq  ((S - T) \cup (R \cap T)) $ \\ 
+
+
+
+$R \subseteq  ((S - T) \cup (R \cap T))$ can be simplified to using distributivity
+\bigskip
+
+$R \subseteq ( (( S - T )\cup R )\cap( ( S - T )\cup T) ) $ where
+
+
+$( S - T )\cup R$ gives you a set X such that $R \subseteq X$
+
+$ ( S - T )\cup T$  gives you S ...
+\bigskip
+
+	So... we get $ R \subseteq  (X \cap S) $ 
+since $R \subseteq X$ and from our assumption $R \subseteq S$
+
+The intersection gives at least R as an answer
+
+Therefore
+$R \subseteq  R$ is true 
+ 
+\bigskip
+The opposite way cannot be proved because R does'nt have to be  $\subseteq$ S
+
+Counter-example $ S = \{4\}$
+$R = \{1,3,5\}$
+$T = R = \{1,3,5\}$
+
+$S-T = \{4\}$
+$R \cap T = \{1,3,5\}$
+
+$ R = (S - T) \cup (R \cap T) = \{1,3,4,5\}$ 
+in this case R is definitely not a subset of S
+
+
+
+\end{flushleft}
+
+
+\end{document}
