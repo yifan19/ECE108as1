@@ -1,0 +1,69 @@
+\documentclass{article}
+
+
+\begin{document}
+
+
+a) $R \subseteq  T$ proves it wrong then you are done
+
+2.) Given sets A and B under what condition does $A-B= B-A$ 
+
+    need to prove that $ A=B \iff A-B = B-A $
+    
+
+    \bigskip
+
+    starting with $A=B \rightarrow A-B = B-A $
+    
+    if $A=B$, then $A-B = B-A = \O$
+    
+    
+    \bigskip
+
+    continuing with $A=B \leftarrow A-B = B-A$
+
+    PBC    if $A\neq B$
+        then $A\not\subseteq B \vee B\not\subseteq A$
+        then $\exists x \in A \mid x \not\in B$ OR
+            $\exists x \in B \mid x \not\in A$
+
+    but by definition of difference of sets:\\
+    
+        $ A-B = \{x \mid x \in A \wedge x \not\in B\}$
+        \smallskip
+        
+        
+        $ B-A = \{x \mid x \in B \wedge x \not\in A\}$
+
+        if $ A-B = B-A$
+
+        then it means that $\exists x \in A \mid x \not\in B$
+        
+        because of the equality 
+        but the same x must exists in $B$ not in $A$
+
+        we can see that no element satisfies this condition
+        
+        We can then conclude that
+
+        $A - B = \O$ $ B- A = \O$
+        proving also that $\forall x \in A \mid x \in B$
+                          $\forall x \in B \mid x \in A$
+                          therefor proving the equality
+
+        
+       \bigskip 
+        \bigskip
+
+
+i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
+    show T is refl sym and transitive to prove it
+
+4. Given poset (x, smallerEq) prove or disprove 
+(a) x >= y iff y <=-1 x
+
+R-1 = {(b,a) | (a,b) $\in$ R)
+(y,x) $\in$ <= so it mean (x,y) $\in$ <=-1
+
+(b) x >= y $\iff$ y <='x   (2,2) will prove it false;
+\end{document}
