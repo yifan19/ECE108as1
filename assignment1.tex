@@ -409,8 +409,27 @@ in this case R is definitely not a subset of S
 
 \bigskip
 
-    \textbf{(d)} possible to compose $ f o g$ $ f o h$ $ g o h$ 
+    \textbf{(d)} possible to compose $ f \circ g $ $ f\circ h  $ $ g \circ h$ 
      
+    in order to have a correct composition $ J \circ K$ also knowns as $ K(J(x)) $
+
+    We know that codom(J) $\subseteq$ dom(K) since the domain of K can be restricted to $=$ codom(J)
+
+    therefore:  
+
+
+    cod(f) = $\mathbb{N}$  and dom(g) = $\mathbb{N}$ therefore possible 
+
+    $g(f(x)): \mathbb{N} \rightarrow \mathbb{N}$ where $ x \mapsto x^{2}$
+
+
+    cod(f) = $\mathbb{N}$  and dom(h) = $\mathbb{Q^{+}}$ therefore possible 
+    
+    $h(f(x)): \mathbb{N} \rightarrow \mathbb{Q^{+}}$ where $ x \mapsto \frac{1}{x}$
+
+    cod(g) = $\mathbb{N}$  and dom(h) = $\mathbb{Q^{+}}$ therefore possible 
+    
+    $h(g(x)): \mathbb{N} \rightarrow \mathbb{Q^{+}}$ where $ x \mapsto \frac{1}{x^{2}}$
 \end{flushleft}
 
 \section{Closure}
@@ -418,7 +437,23 @@ in this case R is definitely not a subset of S
 
 \begin{flushleft}
 
+    a strict partial order is asymmetric,  transitive
+    
+    if we take the reflective closure of that then the relation will be asymmetric, transitive and reflective
+
+    then we only have to prove that reflective and asymmetric implies antisymmetric 
+    
+    prove:\\ 
+    refl $\wedge$ asym $\rightarrow$ antisym
+
+    definition for refl means $ \forall x \in R ( \exist xRx)$
+    definition for asym
+
+
+    PBC ,  refl $\wedge$ asym $\wedge$ not antisym
+    
 \end{flushleft}
+
 
     i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
     show T is refl sym and transitive to prove it
