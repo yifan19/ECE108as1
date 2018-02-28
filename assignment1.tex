@@ -1,4 +1,8 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[12pts,A4]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
 
 \begin{document}
 
@@ -316,7 +320,7 @@ in this case R is definitely not a subset of S
    
     and sets don't have duplicates
 
-    we've got an injective "equivalence" funciton
+    we've got an injective "equivalence" function
 
     \bigskip
     \bigskip
@@ -333,14 +337,86 @@ in this case R is definitely not a subset of S
 
     Therefore I can guarantee that my function will not be injective if I need my function to be surjective
     \bigskip
+
     so a function that 
-    $g : Y \rightarrow X$
+
+
+    \begin{equation}
+        x \mapsto \begin{cases}
+            x,& \text{if $ x \in (X \cap Y)$}\\
+            \text{any Value in Y}, & \text{if } x \in (Y - X)
+        \end{cases}
+    \end{equation}
     
-    $ x \mapsto x if x \in (X \cap Y)$ 
+%   $g : Y \rightarrow X$
     
-    $and x \mapsto $ any value $ \in Y if x\in (Y - X)$
+%   $ x \mapsto x if x \in (X \cap Y)$ 
+    
+%   $and x \mapsto $ any value $ \in Y if x\in (Y - X)$
     \bigskip 
     the mapping to any value will make sure that our function definition maps all the domain to satisfy the definition of a function
+
+\end{flushleft}
+
+
+\section{ Functions.. Even more}
+
+\begin{flushleft}
+    \textbf{(a)} $f: \mathbb{N} \rightarrow \mathbb{N}$ where $ f: x \mapsto x$
+    
+    \bigskip 
+
+    Since the dom $=$ codom, and the function maps the value to itself\\
+    we can conclude that:
+    
+    \bigskip
+    
+    function is injective because all values of the domain is mapped to a unique value in the codomain 
+    
+    function is surjective because all values of the codomain is being mapped to
+    (range $=$ codomain)
+
+    therefore, the function is bijective
+
+    \bigskip
+
+
+
+    \textbf{(b)} $g: \mathbb{N} \rightarrow \mathbb{N}$ where $ g: x \mapsto x^{2}$
+
+    in this case, the function maps all the values in the domain to the square of itself.
+
+    since all values in the domain has a unique square value in the codomain, the function is injective
+
+    since range $\not =$ codomain because $ 3 \in \mathbb{N}$ but 3 is not mapped by any value in the domain, the function is \textbf{NOT} surjective
+
+    therefore not bijective 
+
+    \bigskip
+
+    \textbf{(c)} $h: \mathbb{Q^{+}} \rightarrow \mathbb{Q^{+}}$ where $ h: x \mapsto 1/x$
+    
+    \textbf{ I assume that the function maps x to the inverse of its most simplified version} else, it is not even a function 
+    because $ 4 \mapsto \frac{1}{4}$ but also $\mapsto \frac{2}{8}$
+    
+    right off the bat, we can see that the same number could be represented by 2 different values of the domain i.e $ \frac{1}{2}$ $\frac{2}{4} $
+
+    since the inverse operation of these 2 fractions all map to 2, the function does not satisfy the injective definition.
+
+    similiarly, the surjective definition is not satisfied since $\frac{2}{8}$ will never be mapped to. refer to the assumption
+
+    obviously not bijective, so \textbf{None of the Above}
+
+\bigskip
+
+    \textbf{(d)} possible to compose $ f o g$ $ f o h$ $ g o h$ 
+     
+\end{flushleft}
+
+\section{Closure}
+
+
+\begin{flushleft}
 
 \end{flushleft}
 
