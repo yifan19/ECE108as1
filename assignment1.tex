@@ -11,13 +11,15 @@
 \section{Set Operation}
 
 
-a)
+
+
 \begin{flushleft}
+    
+    \textbf{a)}
+    $R \subseteq  S \iff R \subseteq  ((S - T) \cup (R \cap T))$ 
 
-$R \subseteq  S \iff R \subseteq  ((S - T) \cup (R \cap T))$ 
 
-
-This statement is false because the implication is only unidirectional. 
+    This statement is false because the implication is only unidirectional. 
 \bigskip
 
 
@@ -47,6 +49,8 @@ $R \subseteq  R$ is true
  
 \bigskip
 The opposite way cannot be proved because R does'nt have to be  $\subseteq$ S
+$R \subseteq  T$ will suffice the counter-example
+\bigskip
 
 Counter-example $ S = \{4\}$
 $R = \{1,3,5\}$
@@ -62,16 +66,134 @@ in this case R is definitely not a subset of S
 
 \end{flushleft}
 
+\pagebreak
+
+\begin{flushleft}
+    \textbf{(b)} $(A \cap C ) \subseteq (B \cap C) \rightarrow A \subseteq B$
+    proof:
+    \bigskip
+    let $x \in A \cap B$
+    we can conclude that... 
+    \bigskip
+    
+    by the definition of intersection, $\forall x \in A, x \in C$
+    
+    we deduce that x must be in both A and C 
+
+    \bigskip
+    by the definition of subset, $\forall x \in (A \cap C), x \in (B \cap C)$
+
+    
+    we can say $\forall x \in A, x \in (B \cap C)$
+
+    \bigskip
+    which means by the definition of intersection that 
+
+    $\forall x \in A, x \in B \wedge x\in C$
+
+    So... $\forall x \in A, x$ must be $\in B$
+
+    which is the definition of $ A \subseteq B $
 
 
-a) $R \subseteq  T$ proves it wrong then you are done
 
-2.) Given sets A and B under what condition does $A-B= B-A$ 
+
+
+\end{flushleft}
+
+
+\begin{flushleft}
+   \textbf{(c)} $A \in B \wedge B \in C \rightarrow A \in C$ 
+    
+    this statement is obviously false since
+
+    let $ A = \{ 3 \}$
+    let $ B = \{ \{ 3 \}, 4 \}$
+    let $ C = \{ \{ \{ 3 \}, 4 \}, 5 \}$
+
+    \bigskip
+
+    we can see that $A \in B \wedge B \in C$
+
+    but $A \not\in C$
+
+
+
+\end{flushleft}
+
+
+\begin{flushleft}
+   \textbf{(d)} $A \in B \wedge B \in C \rightarrow A \subseteq C$ 
+    
+    this statement is obviously false since
+
+    let $ A = \{ 3 \}$
+    let $ B = \{ \{ 3 \}, 4 \}$
+    let $ C = \{ \{ \{ 3 \}, 4 \}, 5 \}$
+
+    \bigskip
+
+    we can see that $A \in B \wedge B \in C$
+
+    but $A \not\subseteq C$
+
+
+
+\end{flushleft}
+
+
+
+\begin{flushleft}
+   \textbf{(e)} $A \in B \wedge B \subseteq C \rightarrow A \in C$ 
+    
+    proof: 
+
+    if $B \subseteq C$
+
+    that means $\forall x \in B , x \in C $
+    
+
+    now $A \in B$ means that $A$ is an element of B represented by $\forall x$
+
+    replacing $\forall x$ by $A$
+    
+    we can then conclude $ A \in B$ means $ A \in C$
+    
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{(f)} $A \in B \wedge B \subseteq C \rightarrow A \subseteq C$ 
+    
+    this is obviously false since we proved that $A \in C$ is true
+    let $ A = \{ 3 \}$
+    let $ B = \{ \{ 3 \}, 4 \}$
+    let $ C = \{ \{ 3 \}, 4 ,5 \}$
+
+
+
+    \bigskip
+    we can see that $A \in B \wedge B \subseteq C$
+
+    but $A \not\subseteq C$
+
+
+
+
+\end{flushleft}
+
+
+\section{Set operations}
+
+
+\begin{flushleft}
+    Given sets A and B under what condition does $A-B= B-A$ 
 
     need to prove that $ A=B \iff A-B = B-A $
     
 
     \bigskip
+    Proof:
+
 
     starting with $A=B \rightarrow A-B = B-A $
     
@@ -81,42 +203,148 @@ a) $R \subseteq  T$ proves it wrong then you are done
     \bigskip
 
     continuing with $A=B \leftarrow A-B = B-A$
+    \bigskip
+    Proof:
+        
+        the definitions for differences are:
 
-    PBC    if $A\neq B$
-        then $A\not\subseteq B \vee B\not\subseteq A$
-        then $\exists x \in A \mid x \not\in B$ OR
-            $\exists x \in B \mid x \not\in A$
-
-    but by definition of difference of sets:\\
-    
-        $ A-B = \{x \mid x \in A \wedge x \not\in B\}$
         \smallskip
-        
-        
+        $ A-B = \{x \mid x \in A \wedge x \not\in B\}$
+
+        \smallskip
+
         $ B-A = \{x \mid x \in B \wedge x \not\in A\}$
 
-        if $ A-B = B-A$
+        if $A-B = B-A$
 
         then it means that $\exists x \in A \mid x \not\in B$
         
-        because of the equality 
+        because of the equality,
+
+
         but the same x must exists in $B$ not in $A$
 
-        we can see that no element satisfies this condition
+        we can see that no element 
         
         We can then conclude that
 
-        $A - B = \O$ $ B- A = \O$
-        proving also that $\forall x \in A \mid x \in B$
-                          $\forall x \in B \mid x \in A$
-                          therefor proving the equality
+        $A - B = \O \wedge  B- A = \O$
+
+        using the definition of difference we can see that
+
+        in order for $A - B = \O$, that means that $A \subseteq B$
+        
+        in order for $B - A = \O$, that means that $B \subseteq A$
+        
+        \bigskip 
+        therefore $A \subseteq B \wedge B \subseteq A$
+
+        this is the definition of equality $A = B$.
+
+
+
 
         
-       \bigskip 
-        \bigskip
+
+\end{flushleft}
 
 
-i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
+\section{Functions}
+
+\begin{flushleft}
+    \textbf{(a)}
+
+    (i) if f is injective, we don't know anything about the relationship between co-domain and image
+    we only know about that image $\subseteq$ co-domain
+
+    (ii) image $=$ co-domain when it is surjective
+
+    (iii) image $=$ co-domain when it is bijective 
+    
+     
+\end{flushleft}
+
+\begin{flushleft}
+    \textbf{(b)}
+
+    (i) if $f$ is injective, it means that the function is invertible and we can map the image ($\not =$ co-domain) back to it's domain
+
+
+        so $f^{-1}$ has image the full codomain of $f$
+
+        image  $(f^{-1} )$ = dom $(f)$
+        
+
+    (ii) turns out that if $f$ is not injective, it cannot be inverted
+        
+        since $f^{-1}$ does not exist, 
+        
+    (iii) image  $(f^{-1} )$ = dom $(f)$ when it is bijective 
+    
+    
+     
+\end{flushleft}
+
+\section{Functions}
+
+\begin{flushleft}
+    
+    \textbf{I assume that both X and Y are not empty sets....}
+
+
+    \textbf{(a)} there exists an injection $f : X \rightarrow Y$
+    \bigskip
+
+    Proof:
+
+    if $ X \subseteq Y$ , this means 
+    
+    $ \forall a ( a \in X \rightarrow a \in Y) $
+
+    a "same" function can be applied that maps all the values in X to its same value, but in Y
+
+    \bigskip
+     $f : X \rightarrow Y$
+    
+     $ x \mapsto x$ 
+    
+    \bigskip
+
+    Since all values in X is present in Y,
+    
+    and every single value in X maps to one value inside of Y
+   
+    and sets don't have duplicates
+
+    we've got an injective "equivalence" funciton
+
+    \bigskip
+    \bigskip
+
+    
+
+    \textbf{(b)} there exists a surjection $g : Y \rightarrow X$
+
+    well we know that $X \subseteq Y$
+
+    so cardinality($X$) $\leq$ cardinality($Y$)
+    
+    I can conclude that my domain will be either equal or bigger than my codomain
+
+    Therefore I can guarantee that my function will not be injective if I need my function to be surjective
+    \bigskip
+    so a function that 
+    $g : Y \rightarrow X$
+    
+    $ x \mapsto x if x \in (X \cap Y)$ 
+    
+    $and x \mapsto $ any value $ \in Y if x\in (Y - X)$
+    \bigskip 
+    the mapping to any value will make sure that our function definition maps all the domain to satisfy the definition of a function
+
+\end{flushleft}
+
+    i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
     show T is refl sym and transitive to prove it
 
 4. Given poset (x, smallerEq) prove or disprove 
