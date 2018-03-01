@@ -437,23 +437,315 @@ in this case R is definitely not a subset of S
 
 \begin{flushleft}
 
-    a strict partial order is asymmetric,  transitive
+    a strict partial order is asymmetric and transitive
+
+    a partial order is reflective, antisymmetric and transitive
+
+    \bigskip
+
+
+    if we take the reflective closure of the relation $ < $ 
+    (the new set is refered as $R$ from now on)
+
+    then we have added all the $x<x$.\\
+
+    More precisely: \\
+    $ \forall x<y  , \exists (xRy \wedge xRx \wedge yRy)$
+
+    where $ x \not = y$ since it is part of a strict poset 
+
+
+    prove that transitivity is kept with the newly added elements:
+    \bigskip
+
+    as we see, for any arbitrary $xRy \in R$, we now have $xRx$ and $yRy$:
+
+    using the definition of transitivity,
     
-    if we take the reflective closure of that then the relation will be asymmetric, transitive and reflective
+    $xRy \wedge yRy \rightarrow xRy$
 
-    then we only have to prove that reflective and asymmetric implies antisymmetric 
+    $xRx \wedge xRy \rightarrow xRy$
     
-    prove:\\ 
-    refl $\wedge$ asym $\rightarrow$ antisym
+    then we see that $xRy$ is required to be in the set for it to be transitive
 
-    definition for refl means $ \forall x \in R ( \exist xRx)$
-    definition for asym
+    and indeed $xRy$ is in the set from our assumption.
+    \bigskip
+
+    prove that the newly created set is antisymmetric:
+
+    the new set R now satisfies the new condition 
+
+    $ \forall x \forall y ((xRy \Rightarrow \neg yRx) \vee (x = y))$
+    
+    this means that for an arbitrary $xRy$, 
+    there cannot be $yRx$ unless $ x = y$
+
+    this is the less formal definition of antisymmetric relations
+    
+    \bigskip
+    The proof for reflective is trivial since we had to take a reflective closure of the $<$ set.
+    \bigskip
+
+    Therefore, the new set $R$ is a poset since it satisfies the 3 conditions
 
 
-    PBC ,  refl $\wedge$ asym $\wedge$ not antisym
     
 \end{flushleft}
 
+\section{Hass Diagram}
+
+
+\section{Equivalent Relationship}
+
+\begin{flushleft}
+
+    need to show that T is reflective, symmetric and transitive
+    
+
+    \bigskip
+    \bigskip
+
+    we first need to determine the set relationship between $T$ and $R S$
+    
+    Define $T \subseteq A^{2}$ such that $xTy \iff (xRy \wedge xSy)$
+
+    we see that for any arbitrary $xTy$ , there exists $xRy$ and $xSy$
+
+    we can conclude that for any element in T, the same element exists in S and R
+
+    mathematically, this is written as $T = R \subseteq T \wedge \subseteq S$
+    
+    which implies $\subseteq ( R \cap U)$ 
+    \bigskip
+    
+
+    
+
+    if $ T = \emptyset $, then $T$ would be an equivalent relationship since all the assumptions become false and implications become true
+    
+    so for our proof, we are going to assume that there exists at least 1 element inside the relation $T$
+
+    
+    \bigskip
+
+    proof for reflective:
+    
+    \bigskip
+
+    if T is not reflective, then $ \exists x   (\neg x T x) $
+
+    so it means by double implication (iff) that $ \exists x( (\neg xRx)
+    \vee (\neg xSx)) $
+
+    
+
+    but $R$ and $S$ are all equivalent relationships 
+
+    Contraction occurs since both R and S are reflective and 
+
+    $\forall x( xRx \wedge xSx)$
+
+    we conclude that T has to be reflective
+
+    \bigskip
+
+
+    Same logic follows for the 2 other conditions:
+
+    \bigskip
+
+    proof for symmetric:
+    
+    \bigskip
+
+    if T is not symmetric, then $ \exists x \exists y  ( xTy \wedge \neg y T x) $
+
+    so it means by double implication (iff) that $ \exists x \exists y  ( xRy \wedge \neg y R x) 
+    \vee ( xSy\wedge \neg y S x) $
+
+    
+
+    but $R$ and $S$ are all equivalent relationships 
+
+    Contraction occurs since both R and S are symmetric  
+
+
+    we conclude that T has to be symmetric
+
+
+    \bigskip
+
+    proof for transitive:
+    
+    \bigskip
+
+    if T is not transitive, then $ \exists x \exists y \exists z
+    (xTy \wedge yTz \wedge \neg xTz)$
+
+    so it means by double implication (iff) that the same xSz or xRz doesn't exist
+    
+    $ \exists x \exists y \exists z( (xRy \wedge yRz \wedge \neg xRz) \vee
+(xSy \wedge ySz \wedge \neg xSz))$
+    
+
+    
+
+    but $R$ and $S$ are all equivalent relationships 
+
+    Contraction occurs since both R and S are transitive, 
+    so both $xRz$ and $xSz$ exists 
+
+
+    we conclude that T has to be transitive
+
+
+    \bigskip
+
+
+    We finally conclude that T is an equivalent relationship... $\Box$
+
+
+
+\end{flushleft}
+
+\section{Posets}
+\begin{flushleft}
+
+
+\textbf{(a)} $ x \geq y \iff y \leq^{-1} x $ 
+
+    $ x \geq y $ can be rewritten as
+    $ y \leq x $
+
+    since $y \leq x \not = y \leq^{-1} x$
+
+    false
+    \bigskip
+
+\textbf{(b)} $ x \geq y \iff y \leq^{'} x $ 
+
+    $ x \geq y $ can be rewritten as
+    $ y \leq x $
+
+    since $y \leq x \not = y \leq^{'} x$
+
+    false
+
+    \bigskip
+
+
+\textbf{(c)} $ x < y \iff y \leq^{'} x $ 
+
+    prove that $ x < y \Rightarrow y \leq^{'} x $  
+
+    $x <  y$ can be rewritten as $ y >  x$
+
+    and the complement of $ y > x$ is $ y \leq ^{'} x$ 
+    
+    therefore $y>x$ = $y \leq ^{'} x$
+    \bigskip
+
+    since I have proven they are equal, $\iff$ is proven
+
+\textbf{(d)} $ x > y \iff y (\leq^{-1})^{'} x $ 
+
+    $ x > y $ can be rewritten as $ y < x$
+
+    $ y < x $ 's inverse is $ x < ^{-1} y $
+
+    $ x < ^{-1} y $ can now be rewritten as $y > ^{-1} x$
+
+    taking the complement might not be obvious, so let's split
+    $X$ into $ \leq^{-1} ,>^{-1} $ sets
+   
+    taking the complement we get the set we don't have
+    
+    $y (\leq ^{-1})^{'} x$
+    
+    
+    \bigskip
+
+    we conclude that $ x > y =  y (\leq^{-1})^{'} x $  
+
+    therefore the bidirection is proven since they are equal
+    
+    \bigskip
+
+\textbf{(e)} $ x > y \iff y (\leq^{'})^{-1} x $ 
+    
+    I doubt this is true, since \textbf{(d)} is true...
+    turns out it is true
+
+    $ x > y $ can be rewritten as $ y < x$
+
+    
+    taking the complement we get  $ y < x$ = $ y \geq ^{'} x $
+   
+    if we then take the inverse we get $ x (\geq ^{'} )^{-1} y $
+    
+    indeed we just have to swap x and y to get the inverse
+    
+    this could be rewritten as $ y (\leq ^{'} )^{-1} x $
+    \bigskip
+
+    we conclude that $ x > y =  y (\leq^{'})^{-1} x $  
+
+    therefore the bidirection is proven since they are equal
+
+
+\end{flushleft}
+\section {More Posets}
+
+\section{posets until posets}
+
+\section{Functions, Relations and Cardinality}
+
+\begin{flushleft}
+
+    to be a function every single value inside of A needs to map to so
+    some value of the cod(A)
+
+    let $A = \{ a,b,c \}$
+    aa-ba-ca is an obvious one
+    if a always maps to a,
+    aa-ba-ca x3
+    aa-ba-cb
+    aa-ba-cc
+
+    aa-bb-ca
+    aa-bb-cb
+    aa-bb-cc
+    
+    aa-bc-ca
+    aa-bc-cb
+    aa-bc-cc
+    
+
+    ab-ba-ca
+    x9
+
+    ac-ba-ca
+    x9
+    
+    seems like the answer is $N^{N}$
+    \bigskip
+
+
+    Assuming A is not infinite,
+
+
+    in order to get a surjective mapping, all values in the domain
+    must map to something different since Dom = Cod indeed $A = A$
+
+    this means that in order to get a surjective mapping, the function
+    needs to be injective
+    
+    by being both injective and surjective, the function is bijective
+
+    aa-bb-cc aa-bc-cb ab-ba-cc ab-bc-
+
+    which is $N!$
+\end{flushleft}
 
     i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
     show T is refl sym and transitive to prove it
