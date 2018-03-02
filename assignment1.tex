@@ -63,7 +63,7 @@ $T = R = \{1,3,5\}$
 $S-T = \{4\}$
 $R \cap T = \{1,3,5\}$
 
-$ R = (S - T) \cup (R \cap T) = \{1,3,4,5\}$ 
+$ R \subseteq (S - T) \cup (R \cap T) = \{1,3,4,5\}$ 
 in this case R is definitely not a subset of S
 
 
@@ -85,6 +85,7 @@ in this case R is definitely not a subset of S
     we deduce that x must be in both A and C 
 
     \bigskip
+
     by the definition of subset, $\forall x \in (A \cap C), x \in (B \cap C)$
 
     
@@ -619,6 +620,8 @@ in this case R is definitely not a subset of S
 
     since $y \leq x \not = y \leq^{-1} x$
 
+    for when $y \not = x$
+
     false
     \bigskip
 
@@ -628,6 +631,8 @@ in this case R is definitely not a subset of S
     $ y \leq x $
 
     since $y \leq x \not = y \leq^{'} x$
+    
+    because $y \leq^{'} x = y > x $ by definition of complement
 
     false
 
@@ -676,16 +681,14 @@ in this case R is definitely not a subset of S
     I doubt this is true, since \textbf{(d)} is true...
     turns out it is true
 
-    $ x > y $ can be rewritten as $ y < x$
 
     
-    taking the complement we get  $ y < x$ = $ y \geq ^{'} x $
+    taking the complement we get  $ x > y$ = $ x \leq ^{'} y $
    
-    if we then take the inverse we get $ x (\geq ^{'} )^{-1} y $
+    if we then take the inverse we get $ y (\leq ^{'} )^{-1} x $
     
     indeed we just have to swap x and y to get the inverse
     
-    this could be rewritten as $ y (\leq ^{'} )^{-1} x $
     \bigskip
 
     we conclude that $ x > y =  y (\leq^{'})^{-1} x $  
@@ -696,7 +699,103 @@ in this case R is definitely not a subset of S
 \end{flushleft}
 \section {More Posets}
 
+\begin{flushleft}
+    
+    $ X \subset N $
+
+    $ \forall x,y \in \mathbb{N} xRy \iff \exists_{z} \in X x+z = y$
+
+    \textbf{a} $0 \in X$
+
+    for 0 to be in X, it must satisfy the assumption stated above
+     
+    $0 \in X$ means that 0R0 exists.\\
+    then indeed it exists a value $ z \in X, 0$
+
+    such that 0 + z = 0 is true
+    
+    therefore 0 
+    $R$ is trans reflex and antisym 
+
+    in order for $ 0 \in X$ 
+
+    \textbf{(a} 
+    
+    we know from part \textbf{(a)}  and assumption
+
+
+    (0,x,y) $\in$ X
+    
+    we then know that because R is a poset (symmetrical)
+
+    $ 0R0 , xRx, yRy $ exists in the poset
+    
+
+    trying to prove 
+    xR0 and 0Ry are in the set
+
+    then by the $\iff$ statement, $\exists_{z} \in X x+z  = y$
+
+    let $y = y$  since $ y \in X$
+
+    then $ x + y = y$ 
+    
+    so x must equal 0
+
+    so $0Ry$ is in the relation
+
+    by the 
+    so xRy is in the set
+
+    then xRy implies that x + z = y
+    let z = (x+y)
+    
+    $ x+ y \in X$
+
+    $ (x+y) R w \iff (x+y)+w = y$
+
+    
+\end{flushleft}
+
 \section{posets until posets}
+\begin{flushleft}
+
+        
+    \textbf{(a)}
+    Proof that minimum element is unique
+
+    PBC let's assume $a$ and $b$ are the minimum elements of the subset $Y$
+
+    then by the $\iff$ statement,
+    
+    $\forall y \in Y a \leq y $ (eq1) 
+
+    $\forall y \in Y b \leq y $ 
+    
+    and both $ a \wedge b \in Y$
+
+    there is a contradiction here since we have $\forall y \in Y$
+    
+    $y$ can take the value of $ a$ and $b$
+
+    so it must be true that by manipulating (eq1) that
+    
+    $ b \in Y a \leq b $
+
+    which is saying that a is $\leq$ b
+    but b cannot be smaller than any value because b is a minimum 
+
+    \bigskip
+
+    therefore a minimum element is unique $\Box$
+
+    \textbf{(b)}
+
+    Proof that a minimum element is also a minimal element
+
+    
+\end{flushleft}
+
 
 \section{Functions, Relations and Cardinality}
 
@@ -756,7 +855,75 @@ in this case R is definitely not a subset of S
     therefore the amount of injective and surjective is also $N!$
 
     \bigskip
+    
+    \textbf{(c)}
+    
+    well let's brute force through all the possible relations:
 
+    if 0 element $\rightarrow \{\} \binom{0}{0}$
+
+    if 1 element $\rightarrow \{\} , \{a,a\} \binom{1} {0 to 1} $ the size is 2
+
+    if 2 elements we get $ \emptyset , aa , ab, ba, bb, $ so $ \binom{4} {0 to 4} $ the size is 16
+
+    if 3 elements we get $ \emptyset, aa , ab, ac, ba, bb, bc, ca, cb, cc $ so $ \binom{9} {0 to 9}$ the size is 512
+
+    so we can conclude in general we get 
+    $$\sum_{k=0}^{N^{2}} \binom{N^{2}} {k} $$ 
+
+    is there a way to simplify?
+
+    ya... $$ 2^{N^2} $$
+
+
+
+    \textbf{(d)}
+    
+    to be both antisym and sym it means that the function needs to satisfy
+
+    $ \forall x \forall y ((xRy \Rightarrow yRx) \wedge ((xRy \wedge yRx) \Rightarrow x = y ))$ 
+
+    this basically means that only $xRx$ relationship can exist inside of the set;
+    
+    attempt to prove:
+
+    since if $xRy$ exists, then $yRx$ exists by symmetric definition
+    
+    but by the antisymmetric definition, $xRy \wedge yRx \Rightarrow  x = y$
+
+    therefore $xRy = yRx$ therefore
+
+    $ R = \{(x,x)\} $
+
+    \bigskip
+
+    by going through the similar process we realize its the sum of N choose K
+    if 0 element $\rightarrow \{\} \binom{0}{0}$
+
+    if 1 element $\rightarrow \{\} , \{a,a\} \binom{1} {0 to 1} $ the size is 2
+
+    if 2 elements we get $ \emptyset , aa ,  bb, $ so $ \binom{2} {0 to 2} $ 
+
+    $$\sum_{k=0}^{N} \binom{N} {k} $$ 
+    
+    \bigskip
+
+    \textbf{(e)}
+    
+    now $ R = \{  \forall x \in A ( xRx ) \} $ 
+
+    if 0 element $\rightarrow \{\}$ 
+
+    if 1 element $\rightarrow \{\} , \{(a,a)\}$ 
+
+    if 2 elements we get $ \emptyset , \{ (a,a),(b,b) \}$
+
+   we see that since it's for all x, the amount of set is 2 for $N > 0$ and 1 for $N = 0$
+    \textbf{(f)}
+
+    \bigskip
+
+    ?????????????????
 \end{flushleft}
 
     i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
@@ -769,4 +936,5 @@ R-1 = {(b,a) | (a,b) $\in$ R)
 (y,x) $\in$ <= so it mean (x,y) $\in$ <=-1
 
 (b) x >= y $\iff$ y <='x   (2,2) will prove it false;
+
 \end{document}
