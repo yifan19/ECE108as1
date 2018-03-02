@@ -2,7 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
-
+\usepackage{tikz}
 
 \begin{document}
 
@@ -22,21 +22,16 @@
     \textbf{a)}
     $R \subseteq  S \iff R \subseteq  ((S - T) \cup (R \cap T))$ 
 
-
     This statement is false because the implication is only unidirectional. 
 \bigskip
 
 
-
 Proving $R \subseteq  S \rightarrow R \subseteq  ((S - T) \cup (R \cap T)) $ \\ 
-
-
 
 $R \subseteq  ((S - T) \cup (R \cap T))$ can be simplified to using distributivity
 \bigskip
 
 $R \subseteq ( (( S - T )\cup R )\cap( ( S - T )\cup T) ) $ where
-
 
 $( S - T )\cup R$ gives you a set X such that $R \subseteq X$
 
@@ -63,7 +58,7 @@ $T = R = \{1,3,5\}$
 $S-T = \{4\}$
 $R \cap T = \{1,3,5\}$
 
-$ R \subseteq (S - T) \cup (R \cap T) = \{1,3,4,5\}$ 
+$ R \subseteq (S - T) \cup (R \cap T) = \{1,3,4,5\}$ true
 in this case R is definitely not a subset of S
 
 
@@ -74,6 +69,7 @@ in this case R is definitely not a subset of S
 
 \begin{flushleft}
     \textbf{(b)} $(A \cap C ) \subseteq (B \cap C) \rightarrow A \subseteq B$
+
     proof:
     \bigskip
     let $x \in A \cap B$
@@ -260,8 +256,9 @@ in this case R is definitely not a subset of S
     \textbf{(a)}
 
     (i) if f is injective, we don't know anything about the relationship between co-domain and image
-    we only know about that image $\subseteq$ co-domain
-
+    ok i lied... \\ 
+    we only know about that image $\subseteq$ co-domain\\
+    
     (ii) image $=$ co-domain when it is surjective
 
     (iii) image $=$ co-domain when it is bijective 
@@ -330,16 +327,22 @@ in this case R is definitely not a subset of S
 
     \textbf{(b)} there exists a surjection $g : Y \rightarrow X$
 
+    \textbf{this is false if I didn't assume non-empty sets since if X = $\emptyset$, it is no longer a function}
+
+    \bigskip
+
+    \bigskip
+
     well we know that $X \subseteq Y$
 
     so cardinality($X$) $\leq$ cardinality($Y$)
     
     I can conclude that my domain will be either equal or bigger than my codomain
 
-    Therefore I can guarantee that my function will not be injective if I need my function to be surjective
+    Therefore I can guarantee that my function will not be injective if my function is surjective
     \bigskip
 
-    so a function that 
+    so  I can have a  function that 
 
 
     \begin{equation}
@@ -348,13 +351,7 @@ in this case R is definitely not a subset of S
             \text{any Value in Y}, & \text{if } x \in (Y - X)
         \end{cases}
     \end{equation}
-    
-%   $g : Y \rightarrow X$
-    
-%   $ x \mapsto x if x \in (X \cap Y)$ 
-    
-%   $and x \mapsto $ any value $ \in Y if x\in (Y - X)$
-    \bigskip 
+   \bigskip 
     the mapping to any value will make sure that our function definition maps all the domain to satisfy the definition of a function
 
 \end{flushleft}
@@ -397,19 +394,25 @@ in this case R is definitely not a subset of S
 
     \textbf{(c)} $h: \mathbb{Q^{+}} \rightarrow \mathbb{Q^{+}}$ where $ h: x \mapsto 1/x$
     
-    \textbf{ I assume that the function maps x to the inverse of its most simplified version} else, it is not even a function 
-    because $ 4 \mapsto \frac{1}{4}$ but also $\mapsto \frac{2}{8}$
+    \textbf{ I assume that the function maps x to the inverse of its unsimplified version} 
     
-    right off the bat, we can see that the same number could be represented by 2 different values of the domain i.e $ \frac{1}{2}$ $\frac{2}{4} $
+    so the function $h$ can be described as doing this:
 
-    since the inverse operation of these 2 fractions all map to 2, the function does not satisfy the injective definition.
+    $\forall_{x y} \in \mathbb{N} \frac{x}{y} \mapsto \frac{y}{x}$
+    \bigskip
 
-    similiarly, the surjective definition is not satisfied since $\frac{2}{8}$ will never be mapped to. refer to the assumption
+    we can then say that every value in the codomain has its correponding value in the domain
 
-    obviously not bijective, so \textbf{None of the Above}
+    since we can map all $\frac{x}{y}$ to an unique $\frac{y}{x}$, it is injective
 
-\bigskip
+    \bigskip
+    since we can represent all values of $\mathbb{Q^{+}}$ with $y$ and $x \in \mathbb{N}$ and that there is no value that cannot be mapped by the domain, it is surjective
 
+    \bigskip
+
+    therefore $h$ is bijective too
+
+    \bigskip
     \textbf{(d)} possible to compose $ f \circ g $ $ f\circ h  $ $ g \circ h$ 
      
     in order to have a correct composition $ J \circ K$ also knowns as $ K(J(x)) $
@@ -448,7 +451,7 @@ in this case R is definitely not a subset of S
     if we take the reflective closure of the relation $ < $ 
     (the new set is refered as $R$ from now on)
 
-    then we have added all the $x<x$.\\
+    then we have added all the $xRx$.\\
 
     More precisely: \\
     $ \forall x<y  , \exists (xRy \wedge xRx \wedge yRy)$
@@ -495,6 +498,55 @@ in this case R is definitely not a subset of S
 
 \section{Hass Diagram}
 
+
+\begin{flushleft}
+    $INC \geq F $actually $INC > F$\\
+    $INC \geq D$\\
+    $A > INC$\\
+
+    $WD > F$ \\
+    $WD > D$ \\
+    $B \geq WD $\\
+    $AEG > F$\\
+    $AEG > D$\\
+    $AEG \geq C$\\
+    
+    \pagebreak
+
+    \textbf{ better relationship}
+
+    \begin{tikzpicture}[scale=2,thick ]
+      \node (a) at (0,-3) {$A$};
+      \node (b) at (0,-2) {$B$};
+      \node (c) at (0,-1) {$C$};
+      \node (d) at (0,0) {$D$};  
+      \node (f) at (0,1) {$F$};
+      \node (inc) at (-2,-1) {$INC$};
+      \node (wd) at (2,-1) {$WD$};
+      \node (aeg) at (-1,-1) {$AEG$};
+        \draw[ -latex ] (a) edge (b)  (b) edge (c)  (c) edge (d)
+        (d) edge (f) (aeg) edge (d)  (wd) edge (d)
+        (a) edge (inc) (inc) edge (f) ;
+    \end{tikzpicture}
+   
+    \textbf{ better or equal relationship}
+
+    \begin{tikzpicture}[scale=2,thick ]
+      \node (a) at (0,-3) {$A$};
+      \node (b) at (0,-2) {$B$};
+      \node (c) at (0,-1) {$C$};
+      \node (d) at (0,0) {$D$};  
+      \node (f) at (0,1) {$F$};
+      \node (inc) at (-2,-1) {$INC$};
+      \node (wd) at (2,-1) {$WD$};
+      \node (aeg) at (-1,-1) {$AEG$};
+        \draw[ -latex ] (a) edge (b)  (b) edge (c)  (c) edge (d)
+        (d) edge (f) (aeg) edge (c) (b) edge (wd) (wd) edge (d)
+        (a) edge (inc) (inc) edge (d) ;
+    \end{tikzpicture}
+    
+
+\end{flushleft}
 
 \section{Equivalent Relationship}
 
@@ -701,60 +753,65 @@ in this case R is definitely not a subset of S
 
 \begin{flushleft}
     
-    $ X \subset N $
+    $ X \subseteq N $
 
-    $ \forall x,y \in \mathbb{N} xRy \iff \exists_{z} \in X x+z = y$
+    $ \forall x,y \in \mathbb{N}\, xRy \iff \exists_{z \in X} \,x+z = y$
 
-    \textbf{a} $0 \in X$
+    \textbf{(a)} $0 \in X$
 
-    for 0 to be in X, it must satisfy the assumption stated above
-     
-    $0 \in X$ means that 0R0 exists.\\
-    then indeed it exists a value $ z \in X, 0$
-
-    such that 0 + z = 0 is true
+    let us assume that set $X$ has at least one element $a$ 
     
-    therefore 0 
-    $R$ is trans reflex and antisym 
-
-    in order for $ 0 \in X$ 
-
-    \textbf{(a} 
+    therefore, by the $aRa$ must exist since R is a poset and has to be symmetric
+    that implies that there must exist in $X$ to replace $z$ that will make the equation
     
+    $ x+z = y$\\
+    with $ x=a$ and $y=a$
+
+    $a + z = a $\\
+    we conclude that z must be $=0$ and thus $ 0 \in X$
+
+
+    
+    
+    \textbf{(b)} 
+    I modify the question $ a=x$ and $ b=y$ so it becomes 
+    $$ \forall_{a b} (a \in X \wedge b \in X) \Rightarrow a + b \in X $$
     we know from part \textbf{(a)}  and assumption
 
+    
+    $0,a,b \in X$
 
-    (0,x,y) $\in$ X
+    where $a$ and $b$ are just arbitrary values $\in X$
     
     we then know that because R is a poset (symmetrical)
 
-    $ 0R0 , xRx, yRy $ exists in the poset
+    $ 0R0 , aRa, bRb $ exists in the poset
     
-
-    trying to prove 
-    xR0 and 0Ry are in the set
-
-    then by the $\iff$ statement, $\exists_{z} \in X x+z  = y$
-
-    let $y = y$  since $ y \in X$
-
-    then $ x + y = y$ 
+    \bigskip
+    we are trying to prove that $a+b \in X$
     
-    so x must equal 0
+    so when must $a+b$ be equal to z \\
+    in the equation $\exists_{z \in X} x + z = y$
+         
+    let $ x = y = (a+b) $\\
+    we know that $ (x, y)\in \mathbb{N}$\\
+    so we need to show that $(a+b) \in \mathbb{N}$\\
+    since $ (a \wedge b) \in X \wedge X \subseteq \mathbb{N}$\\
 
-    so $0Ry$ is in the relation
+    we can deduce that $(a \wedge b) \in \mathbb{N}$ by applying what we found in \textbf{question 1}\\ 
+    therefore since both $a$ and $b$ are $ \in \mathbb{N}$\\
+    because addition is closed under $\mathbb{N}$\\ 
+    we conclude that the substituion is possible and $a+b \in \mathbb{N}$\\
 
-    by the 
-    so xRy is in the set
+    \bigskip
+    therefore by setting $z = 0$ since $0 \in X$\\
 
-    then xRy implies that x + z = y
-    let z = (x+y)
-    
-    $ x+ y \in X$
+    we get $(a+b) + 0 = (a+b)$ which is true
 
-    $ (x+y) R w \iff (x+y)+w = y$
+    this then implies by our assumption ( $\iff$ statement) 
+    that $ (a+b)R(a+b)$ exists, which implies that $a+b$ is part of the base set since the poset is reflective\\
+    (there must be $xRx \forall x \in X$)
 
-    
 \end{flushleft}
 
 \section{posets until posets}
@@ -788,14 +845,96 @@ in this case R is definitely not a subset of S
     \bigskip
 
     therefore a minimum element is unique $\Box$
+    
+    \bigskip
 
     \textbf{(b)}
 
-    Proof that a minimum element is also a minimal element
-
+    Proof that  minimum element $\Rightarrow$   minimal element
     
-\end{flushleft}
+    \bigskip
 
+    let a be the minimum element 
+
+    then we know that $ a \in Y \wedge \forall_{b \in Y} \, a \leq b $ 
+   
+    PBC minimum element $\wedge \neg$ minimal element
+
+    so if $a$ is not a minimal element, then $\exists_{z \in Y} \, z < a$
+
+    in plain english, there exists a value $z \in Y$ such that $z$ is $<$ than $a$
+
+    but will know from the definition of minimum element that all values of set Y is $\geq a$\\
+    therefore contradiction occurs\\ 
+    \bigskip
+    minimum element $\Rightarrow$ minimal element $\Box$
+    
+    \bigskip
+
+    \textbf{(c)}
+
+    this is false,
+
+    consider the poset  $ R = \{ (a,b),(c,b) (b,d) \}^{tran\,\, refl} $
+    
+    \begin{tikzpicture}[scale=.7]
+      \node (d) at (0,3) {$d$};
+      \node (b) at (0,1) {$b$};
+      \node (c) at (2,0) {$c$};
+      \node (a) at (-2,0) {$a$};  
+        \draw[->] (a) edge (b)  (c) edge (b)  (b) edge (d);
+    \end{tikzpicture}
+
+
+    then let $ Y = R$ 
+    
+    the minimal element is $ a$ and $c$\\
+    the minimum element doesn't exist since $a$ is not related to $c$\\
+    $\forall_{y \in Y} \, x\leq y$ is not satisfied
+
+    \bigskip
+    
+    we see that minimal element doesn't have to be the minimum element
+    
+
+    \bigskip
+    \textbf{(d)}
+    
+    since totally ordered means connected partial order\\
+    $ \forall_{x}\forall_{y} (xRy \vee yRx \vee x=y)$
+    
+    We claim that there exists a minimum no matter which subset of the base set X we take. 
+    
+    This means every single element inside the base set will become at least once a minimum element 
+    
+    Lets start with a subset $Y = X$ with minimum value $a$
+    then by the definition of minimum, a interacts with the entire set by being $ \leq Y$ 
+    $a$ is connected all the values in $X$
+
+    \bigskip
+    we then remove $a$ from $Y$ to create a set $Y^{'} \subseteq X$
+
+    let's say b is now the minimum, so b is connected to every element in $X$ except for the element $a$ , but $a$ is already connected to $b$ previously
+
+
+    \bigskip
+    
+    we then remove $b$ from $Y^{'}$ to create a new subset $Y^{''}$\\
+    we don't have to worry about $a$ and $b$ since both of them are connected\\
+
+    \bigskip
+
+    now let's say $c$ is the new minimum, then $c$ is not connected to every single elements in $X$ including $a$ and $b$ done previously.
+
+    If we repeat this recursive process, we will find that all the elements are connected since every time we remove a minimum from the subset, the new minimum element is connected to $X$.
+    
+    \bigskip
+
+    This is the proof that it is a total order 
+     
+
+
+    \end{flushleft} 
 
 \section{Functions, Relations and Cardinality}
 
@@ -805,7 +944,7 @@ in this case R is definitely not a subset of S
 
     to be a function every single value inside of A needs to map to so
     some value of the cod(A)
-
+k
     let $A = \{ a,b,c \}$
     aa-ba-ca is an obvious one
     if a always maps to a,
@@ -843,7 +982,7 @@ in this case R is definitely not a subset of S
     needs to be injective
     
     by being both injective and surjective, the function is bijective
-
+    
     possible bijective functions for 3 elements
 
     aa-bb-cc aa-bc-cb ab-ba-cc ab-bc-ca ac-ba-cb ac-bb-ca 
@@ -905,6 +1044,8 @@ in this case R is definitely not a subset of S
     if 2 elements we get $ \emptyset , aa ,  bb, $ so $ \binom{2} {0 to 2} $ 
 
     $$\sum_{k=0}^{N} \binom{N} {k} $$ 
+   
+    simplified to $ 2 ^{N}$
     
     \bigskip
 
@@ -918,23 +1059,60 @@ in this case R is definitely not a subset of S
 
     if 2 elements we get $ \emptyset , \{ (a,a),(b,b) \}$
 
-   we see that since it's for all x, the amount of set is 2 for $N > 0$ and 1 for $N = 0$
+    we see that since it's for all x, the amount of set is 2 for $N > 0$ and 1 for $N = 0$
+
+   \bigskip
+
     \textbf{(f)}
+    
 
-    \bigskip
+    it is now reflective, symmetric, transitive
 
-    ?????????????????
+    if 0 element $\rightarrow \{\}$ 
+
+    if 1 element $\rightarrow \{\} , \{(a,a)\}$ 
+
+    if 2 elements we get $ \emptyset , \{ (a,a),(b,b) \}$
+                         $ aa-bb-ab-ba$
+
+    if 3 elements we get $\emptyset, aa-bb-cc$
+
+    also we get aa-bb-cc-ab-ba seems like 3 choose 2
+                aa-bb-cc-ac-ca
+                aa-bb-cc-cb-bc
+                aa-bb-cc-ab-ba-ac-ca-cb-bc
+
+    if 4 elements we get $\emptyset, aa-bb-cc-dd$
+
+                aa-bb-cc-dd
+                aa-bb-cc-dd-ab-ba with ab\\
+                aa-bb-cc-dd-ac-ca with ac\\
+                aa-bb-cc-dd-ad-da with ad\\
+                aa-bb-cc-dd-bc-cb with cb\\
+                aa-bb-cc-dd-bd-db with bd\\
+                aa-bb-cc-dd-cd-dc with cd\\
+
+                $\binom {4}{2}$
+
+                aa-bb-cc-dd-ab-ba-bc-cb
+
+                aa-bb-cc-dd-ac-ca-bd-db
+
+                aa-bb-cc-dd-ad-da-bc-cb
+
+                for num = 2 this step gives you 0\\
+                for num = 3 this step gives you 1\\
+                for num = 4 this step gives you 3\\
+                for num = 5 this step gives you 8\\
+
+                I ve come to a conclusion that it is $(N-3)*(N-1)$
+                aa-bb-cc-dd-ab-ba-bc-cb-ac-ca \\
+                aa-bb-cc-dd-bc-cb-cd-dc-bd-db with acd
+   
+   \bigskip
+   it seems to me that it is $ 2 $ and $\binom {N} {1}$
+   then it looks like it is $\binom {N}{2} $ where the the 2 elements from the base set must not be adjacent to each other 
+    because if we take ab ba and 
+    
 \end{flushleft}
-
-    i. Define $T \subseteq A2$ st $XTy \iff (xRy AND xSY)$
-    show T is refl sym and transitive to prove it
-
-4. Given poset (x, smallerEq) prove or disprove 
-(a) x >= y iff y <=-1 x
-
-R-1 = {(b,a) | (a,b) $\in$ R)
-(y,x) $\in$ <= so it mean (x,y) $\in$ <=-1
-
-(b) x >= y $\iff$ y <='x   (2,2) will prove it false;
-
 \end{document}
